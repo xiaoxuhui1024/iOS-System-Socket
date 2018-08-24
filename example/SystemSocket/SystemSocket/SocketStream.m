@@ -6,8 +6,6 @@
 //  Copyright © 2018年 [简书](https://www.jianshu.com/p/e1d8b4eb0ecd). All rights reserved.
 //
 
-//https://www.jianshu.com/p/d04197cd7751
-
 #define HOST @"114.119.7.136"
 #define PORT 5222
 
@@ -102,7 +100,7 @@ static SocketStream *streamInstance = nil;
     [self.inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [self.outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
-#pragma mark - 读了服务器返回的数据
+#pragma mark - 读取输入流服务器返回时调用代理方法中的数据
 -(void)readData{
     
     //建立一个缓冲区 可以放1024个字节
@@ -118,7 +116,7 @@ static SocketStream *streamInstance = nil;
 
 #pragma mark - 接收数据
 -(void)receiveMessage:(NSString *)message{
-    NSLog(@"接收到消息啦:%@",message);
+     NSLog(@"接收消息啦:%@",message);
 }
 #pragma mark - 发送数据
 -(void)sendMessage:(NSString *)message{
